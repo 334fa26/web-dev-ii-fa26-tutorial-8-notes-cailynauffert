@@ -6,8 +6,8 @@
    Tutorial Case
 
    Cinema Penguin Styles for Animation
-   Author: 
-   Date:   
+   Author: Cailyn Auffert
+   Date:   9-8-26
 
    Filename: cp_animate.css
 
@@ -19,7 +19,10 @@ nav#topLinks a {
    font-size: 1em;
    letter-spacing: 0em;
    text-shadow: rgba(0, 0, 0, 1) 1px -1px 1px;
-
+   transition:  color 1.5s ease-in 0.5s, 
+      font-size 2s ease,
+      letter-spacing 2s ease-out,
+      text-shadow 2s cubic-bezier(0.6, 0, 0.8,0.5);
 }
 
 nav#topLinks a:hover {
@@ -45,8 +48,15 @@ nav#topLinks a:hover {
 
 
 /* Animation Styles */
-
-
+video{
+   animation: spin 104.04s linear infinite;
+}
+input#rotateVideo:checked~video{
+   animation-play-state: running;
+}
+input#rotateVideo:not(:checked)~video{
+   animation-play-state: paused;
+}
 
 /* Animation Icon Styles */
 input#rotateVideo {
@@ -60,6 +70,7 @@ input#rotateVideo:not(:checked)+label::after {
 input#rotateVideo:checked+label::after {
    content: "\270b";
 }
+
 
 label {
    background: rgb(56, 87, 119);
